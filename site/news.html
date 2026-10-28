@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="友豐貿易有限公司最新消息、參展資訊與產品公告。">
+  <title data-i18n="title.news">最新消息｜YOFENG 友豐貿易</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header" id="top">
+  <a class="brand" href="index.html" aria-label="友豐貿易首頁"><img src="assets/yofeng-logo.png" alt="YOFENG 友豐貿易"></a>
+  <nav class="main-nav" aria-label="主要導覽">
+    <a href="index.html" data-i18n="nav.home">首頁</a>
+    <a href="about.html" data-i18n="nav.about">關於友豐</a>
+    <a href="products.html" data-i18n="nav.products">產品介紹</a>
+    <a href="solutions.html" data-i18n="nav.solutions">產業應用</a>
+    <a href="partner.html" data-i18n="nav.partner">合作夥伴</a>
+    <a href="catalog.html" data-i18n="nav.catalog">型錄下載</a>
+    <a href="news.html" data-i18n="nav.news">最新消息</a>
+  </nav>
+  <div class="header-actions">
+    <select id="language" aria-label="Language"><option value="zh-TW">繁中</option><option value="zh-CN">简中</option><option value="en">EN</option><option value="ja">日本語</option></select>
+    <a class="mitutoyo-mini" href="https://www.mitutoyo.co.jp/" target="_blank" rel="noopener noreferrer" aria-label="Mitutoyo official website"><img src="assets/mitutoyo-logo.svg" alt="Mitutoyo"></a>
+    <a class="btn btn-small" href="contact.html" data-i18n="nav.contact">聯絡我們</a>
+    <button class="menu-toggle" aria-label="開啟選單">☰</button>
+  </div>
+</header>
+<main>
+  <section class="page-hero page-hero-banner page-hero-news">
+    <div class="container">
+      <div class="eyebrow">LATEST NEWS</div>
+      <h1 data-i18n="page.news">最新消息</h1>
+      <p data-i18n="newspage.lead">友豐貿易參展資訊、公司公告與產品消息。</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container news-archive">
+      <div class="news-admin-toolbar">
+        <div class="news-admin-toolbar-copy">
+          <strong data-i18n="newspage.adminHintTitle">公告管理</strong>
+          <span data-i18n="newspage.adminHint">管理員可新增公告；新消息會依目前語言顯示。</span>
+        </div>
+        <button type="button" class="btn btn-small" id="openNewsAdmin" data-i18n="newspage.adminButton">新增最新消息</button>
+      </div>
+
+      <section class="news-admin-panel" id="newsAdminPanel" hidden>
+        <div class="news-admin-panel-heading">
+          <div class="eyebrow" data-i18n="newspage.adminHeading">新增最新消息</div>
+          <p data-i18n="newspage.adminTranslationInstruction">請填寫繁體中文、簡體中文、英文及日文內容，儲存後會依網站語言顯示對應版本。</p>
+          <p class="news-admin-browser-note" data-i18n="newspage.adminReadonlyNotice">公告會儲存在雲端資料庫，儲存後所有訪客都能看到。</p>
+        </div>
+        <form id="newsAdminForm" class="news-admin-form">
+          <div class="news-admin-common-fields">
+            <label><span data-i18n="newspage.adminDate">發布日期</span><input type="date" name="news-date" required></label>
+            <label class="news-admin-url"><span data-i18n="newspage.adminLinkUrl">外部連結網址（選填）</span><input type="url" name="news-url" placeholder="https://example.com"></label>
+          </div>
+          <div class="news-admin-language-grid">
+            <fieldset class="news-admin-language-card">
+              <legend>繁體中文</legend>
+              <label><span data-i18n="newspage.adminTitle">標題</span><input type="text" name="title-zh-TW" required></label>
+              <label><span data-i18n="newspage.adminContent">內容</span><textarea name="body-zh-TW" rows="4" required></textarea></label>
+              <label><span data-i18n="newspage.adminLinkLabel">連結文字（選填）</span><input type="text" name="linkLabel-zh-TW"></label>
+            </fieldset>
+            <fieldset class="news-admin-language-card">
+              <legend>简体中文</legend>
+              <label><span data-i18n="newspage.adminTitle">标题</span><input type="text" name="title-zh-CN" required></label>
+              <label><span data-i18n="newspage.adminContent">内容</span><textarea name="body-zh-CN" rows="4" required></textarea></label>
+              <label><span data-i18n="newspage.adminLinkLabel">链接文字（选填）</span><input type="text" name="linkLabel-zh-CN"></label>
+            </fieldset>
+            <fieldset class="news-admin-language-card">
+              <legend>English</legend>
+              <label><span data-i18n="newspage.adminTitle">Title</span><input type="text" name="title-en" required></label>
+              <label><span data-i18n="newspage.adminContent">Content</span><textarea name="body-en" rows="4" required></textarea></label>
+              <label><span data-i18n="newspage.adminLinkLabel">Link text (optional)</span><input type="text" name="linkLabel-en"></label>
+            </fieldset>
+            <fieldset class="news-admin-language-card">
+              <legend>日本語</legend>
+              <label><span data-i18n="newspage.adminTitle">タイトル</span><input type="text" name="title-ja" required></label>
+              <label><span data-i18n="newspage.adminContent">内容</span><textarea name="body-ja" rows="4" required></textarea></label>
+              <label><span data-i18n="newspage.adminLinkLabel">リンク文字（任意）</span><input type="text" name="linkLabel-ja"></label>
+            </fieldset>
+          </div>
+          <div class="news-admin-form-actions">
+            <button type="submit" class="btn btn-primary" data-i18n="newspage.adminSave">儲存消息</button>
+            <button type="button" class="btn btn-outline-dark" id="cancelNewsAdmin" data-i18n="newspage.adminCancel">取消</button>
+          </div>
+          <p class="news-admin-status" id="newsAdminStatus" role="status" aria-live="polite" hidden></p>
+        </form>
+      </section>
+      <div id="customNewsList" class="news-custom-list" aria-live="polite"></div>
+
+      <article class="news-entry">
+        <div class="news-entry-media">
+          <a href="https://www.yo-feng.com/new/2021110903.PNG" target="_blank" rel="noopener noreferrer" aria-label="開啟原始參展圖片">
+            <img src="https://www.yo-feng.com/new/2021110903.PNG" alt="2021 台北國際自動化工業大展參展圖片" loading="lazy" onerror="this.closest('a').classList.add('news-image-unavailable')">
+          </a>
+        </div>
+        <div class="news-entry-content">
+          <time datetime="2021-12-15">2021/12/15～12/18</time>
+          <p data-i18n="newspage.item2021">本公司參加 2021 台北國際自動化工業大展，南港一館展位號碼 L402，歡迎各界蒞臨參觀指教。</p>
+          <div class="news-link-list">
+            <a href="https://www.chanchao.com.tw/AutomationTaipei/" target="_blank" rel="noopener noreferrer" data-i18n="newspage.link2021Official">2021 台北國際自動化工業大展官網 ↗</a>
+            <a href="https://www.chanchao.com.tw/AutomationTaipei/visitorExhibitorDetail.asp?comNo=267091&amp;sno=169059" target="_blank" rel="noopener noreferrer" data-i18n="newspage.link2021Booth">友豐參展資訊 ↗</a>
+            <a href="https://www.chanchao.com.tw/entryApply.asp?id=DAUIROBOT2021" target="_blank" rel="noopener noreferrer" data-i18n="newspage.link2021Register">參觀預先登錄：完成資料填寫，展期出示「入場憑證 QR Code」即可入場參觀 ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="news-entry">
+        <div class="news-entry-media">
+          <a href="https://www.yo-feng.com/new/2021110904.png" target="_blank" rel="noopener noreferrer" aria-label="開啟原始地址公告圖片">
+            <img src="https://www.yo-feng.com/new/2021110904.png" alt="友豐通訊地址公告圖片" loading="lazy" onerror="this.closest('a').classList.add('news-image-unavailable')">
+          </a>
+        </div>
+        <div class="news-entry-content">
+          <time datetime="2020-01-20">2020/01/20</time>
+          <p data-i18n="newspage.item2020Address">本公司為提昇客戶服務，自 2020 年 01 月 20 日（一）起變更通訊地址，敬祈舊雨新知繼續支持與愛護。</p>
+          <address data-i18n="newspage.address">新北市中和區中正路918號5樓（元隆捷運雙星A棟）
+5F., No.918, Zhongzheng Rd., Zhonghe Dist., New Taipei City 23586, Taiwan (R.O.C.)</address>
+          <div class="news-link-list"><a href="https://www.yo-feng.com/new/map.htm" target="_blank" rel="noopener noreferrer" data-i18n="newspage.linkMap">電子地圖 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="news-entry">
+        <div class="news-entry-media">
+          <a href="https://www.yo-feng.com/new/img/18082703.png" target="_blank" rel="noopener noreferrer" aria-label="開啟原始參展圖片">
+            <img src="https://www.yo-feng.com/new/img/18082703.png" alt="2019 台北國際自動化工業大展參展圖片" loading="lazy" onerror="this.closest('a').classList.add('news-image-unavailable')">
+          </a>
+        </div>
+        <div class="news-entry-content">
+          <time datetime="2019-08-21">2019/08/21～08/24</time>
+          <p data-i18n="newspage.item2019">本公司參加 2019 台北國際自動化工業大展，展位號碼 J534，歡迎各界蒞臨參觀指教。</p>
+          <div class="news-link-list">
+            <a href="https://www.chanchao.com.tw/AutomationTaipei/" target="_blank" rel="noopener noreferrer" data-i18n="newspage.link2019Official">2019 台北國際自動化工業大展官網 ↗</a>
+            <a href="https://www.chanchao.com.tw/AutomationTaipei/visitorExhibitorDetail.asp?comNo=267091" target="_blank" rel="noopener noreferrer" data-i18n="newspage.link2021Booth">友豐參展資訊 ↗</a>
+            <a href="https://www.chanchao.com.tw/preReg/index.asp?id=DAUI2019" target="_blank" rel="noopener noreferrer" data-i18n="newspage.link2019Register">入場憑證預先登錄 ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="news-entry">
+        <div class="news-entry-media news-entry-media-double">
+          <a href="https://www.yo-feng.com/new/img/18082702.png" target="_blank" rel="noopener noreferrer" aria-label="開啟原始展覽圖片一">
+            <img src="https://www.yo-feng.com/new/img/18082702.png" alt="2018 智慧顯示與觸控展相關圖片" loading="lazy" onerror="this.closest('a').classList.add('news-image-unavailable')">
+          </a>
+          <a href="https://www.touchtaiwan.com/visitorExhibitorDetail.asp?comNo=890" target="_blank" rel="noopener noreferrer" aria-label="前往 Touch Taiwan 參展資訊">
+            <img src="https://www.yo-feng.com/new/img/18082701.png" alt="Touch Taiwan 參展資訊圖片，點擊前往展覽網站" loading="lazy" onerror="this.closest('a').classList.add('news-image-unavailable')">
+          </a>
+        </div>
+        <div class="news-entry-content">
+          <time datetime="2018-08-29">2018/08/29～08/31</time>
+          <p data-i18n="newspage.item2018">本公司參加 2018 智慧顯示與觸控展，歡迎各界蒞臨參觀指教。</p>
+          <div class="news-link-list"><a href="https://www.touchtaiwan.com/visitorExhibitorDetail.asp?comNo=890" target="_blank" rel="noopener noreferrer" data-i18n="newspage.link2018">Touch Taiwan 參展資訊 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="news-entry">
+        <div class="news-entry-media">
+          <a href="https://www.yo-feng.com/new/img/17081002.gif" target="_blank" rel="noopener noreferrer" aria-label="開啟原始半導體展圖片">
+            <img src="https://www.yo-feng.com/new/img/17081002.gif" alt="SEMICON TAIWAN 2017 國際半導體展參展圖片" loading="lazy" onerror="this.closest('a').classList.add('news-image-unavailable')">
+          </a>
+        </div>
+        <div class="news-entry-content">
+          <time datetime="2017-09-13">2017/09/13～09/15</time>
+          <p data-i18n="newspage.item2017Semicon">本公司參加 SEMICON TAIWAN 2017 國際半導體展，展位號碼 M348，歡迎各界蒞臨參觀指教。</p>
+          <p data-i18n="newspage.item2017SemiconIntro">「SEMICON Taiwan 2017 國際半導體展」是台灣半導體產業的年度盛事，匯集最多世界頂尖半導體科技廠商參與，是您獲取產業趨勢、了解最新技術，以及建立商業網絡的最佳平台！連結 IC 設計、製造、設備材料等環節，並提供半導體產業最完整的前瞻性的市場趨勢與技術課程，每年均吸引 4 萬 5 千人參觀，身為產業菁英，你一定不能錯過！</p>
+          <div class="news-link-list"><a href="http://www.semicontaiwan.org/zh/attend/event-overview" target="_blank" rel="noopener noreferrer" data-i18n="newspage.link2017Semicon">SEMICON Taiwan 2017 活動介紹 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="news-entry">
+        <div class="news-entry-media">
+          <a href="https://www.yo-feng.com/new/img/17081001.gif" target="_blank" rel="noopener noreferrer" aria-label="開啟原始自動化展圖片">
+            <img src="https://www.yo-feng.com/new/img/17081001.gif" alt="台北國際自動化工業大展參展圖片" loading="lazy" onerror="this.closest('a').classList.add('news-image-unavailable')">
+          </a>
+        </div>
+        <div class="news-entry-content">
+          <time datetime="2017-09-06">2017/09/06～09/09</time>
+          <p data-i18n="newspage.item2017Automation">本公司參加台北國際自動化工業大展，展位號碼 L218，歡迎各界蒞臨參觀指教。</p>
+          <p data-i18n="newspage.item2017AutomationIntro">「台北國際自動化工業大展」為國內歷史最悠久的機械展會之一，也是台灣國際工業展會的龍頭，帶領台灣自動化產業在國際間嶄露頭角，並佔有一席之地！自 1987 年以來，已成功舉辦 29 年，無論歷經金融海嘯、國際動亂或者國內 SARS 風暴等重大事件仍屹立不搖，無論在專業及規模上，皆具國際水準，成為亞洲最具代表性的工業自動化、機器人展覽會之一。</p>
+          <div class="news-link-list"><a href="https://www.autotaiwan.com.tw/" target="_blank" rel="noopener noreferrer" data-i18n="newspage.linkAutomation">台北國際自動化工業大展官網 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="news-entry">
+        <div class="news-entry-content news-entry-content-full">
+          <time datetime="2016-09-07">2016/09/07</time>
+          <p data-i18n="newspage.item2016Semicon">本公司參加 2016 國際半導體展，日期：9/7（三）～9/9（五），歡迎各界蒞臨參觀指教。</p>
+          <div class="news-link-list"><a href="http://www.semicontaiwan.org/zh" target="_blank" rel="noopener noreferrer" data-i18n="newspage.link2016Semicon">SEMICON Taiwan 官網 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="news-entry">
+        <div class="news-entry-content news-entry-content-full">
+          <time datetime="2016-03-18">2016/03/18</time>
+          <p data-i18n="newspage.item2016Product">三月份起，推出最新產品「影像自動對焦系統」，歡迎來電洽詢。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><a href="index.html"><img src="assets/yofeng-logo.png" alt="YOFENG"></a><small>Yeou Feng Trading Co., Ltd.</small></div>
+    <div class="footer-links">
+      <a href="about.html" data-i18n="nav.about">關於友豐</a><a href="products.html" data-i18n="nav.products">產品介紹</a><a href="solutions.html" data-i18n="nav.solutions">產業應用</a><a href="partner.html" data-i18n="nav.partner">合作夥伴</a><a href="catalog.html" data-i18n="nav.catalog">型錄下載</a><a href="news.html" data-i18n="nav.news">最新消息</a><a href="contact.html" data-i18n="nav.contact">聯絡我們</a>
+    </div>
+    <div class="copyright">© 2026 YEOU FENG TRADING CO., LTD.</div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

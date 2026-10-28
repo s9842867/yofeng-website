@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="友豐貿易有限公司｜精密量測設備供應與服務。">
+  <title data-i18n="title.about">關於友豐｜YOFENG 友豐貿易</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .company-intro{max-width:1180px;margin:0 auto}
+    .company-intro .intro-lead{font-size:25px;line-height:1.8;color:#073c62;font-weight:700;margin:0 0 34px}
+    .company-intro p{font-size:18px;line-height:2.05;color:#506b80;margin:0 0 24px}
+    .company-intro p:last-child{margin-bottom:0}
+    .company-panel{background:#fff;border:1px solid #dbe7ee;border-radius:28px;padding:58px 64px;box-shadow:0 18px 55px rgba(11,54,82,.07)}
+    .industry-title{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:28px}
+    .industry-title h2{margin:0}
+    .industry-title p{margin:0;font-size:15px;color:#7890a0}
+    .industry-tags{display:flex;flex-wrap:wrap;gap:12px}
+    .industry-tag{padding:13px 19px;border:1px solid #cfe0ea;border-radius:999px;background:#f5f9fb;color:#0b5c88;font-weight:600;font-size:16px}
+    .three-values{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:18px}
+    .three-value{padding:42px 38px 45px;border-right:1px solid var(--line);position:relative}
+    .three-value:last-child{border-right:0}
+    .three-value .value-no{font-size:14px;letter-spacing:.18em;color:#0b6f9f;font-weight:700}
+    .three-value h3{font-size:29px;color:#073c62;margin:15px 0 17px}
+    .three-value p{font-size:17px;line-height:1.95;color:#587287;margin:0}
+    .value-accent{width:46px;height:3px;background:#f2d323;margin-top:25px}
+    .about-cta{background:linear-gradient(135deg,#06243a,#0c5e89);color:#fff;border-radius:26px;padding:46px 52px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .about-cta h2{margin:0 0 10px;color:#fff}
+    .about-cta p{margin:0;color:#d8e8f1;line-height:1.8}
+    @media(max-width:900px){
+      .company-panel{padding:38px 28px}
+      .three-values{grid-template-columns:1fr}
+      .three-value{border-right:0;border-bottom:1px solid var(--line)}
+      .three-value:last-child{border-bottom:0}
+      .industry-title{display:block}
+      .industry-title p{margin-top:8px}
+      .about-cta{display:block;padding:35px 28px}
+      .about-cta .btn{margin-top:22px}
+    }
+
+    .about-hero{min-height:500px;position:relative;overflow:hidden;background:#071f34;color:#fff;display:flex;align-items:stretch}
+    .about-hero-image{position:absolute;inset:0;background:url('assets/about-company-banner.png') center/cover no-repeat}
+    .about-hero-inner{position:relative;z-index:1;display:flex;align-items:center}
+    .about-hero-copy{max-width:650px;padding:80px 0}
+    .about-hero-copy h1{font-size:clamp(52px,6vw,82px);line-height:1.05;margin:10px 0 22px;letter-spacing:-.05em}
+    .about-hero-copy p{font-size:20px;line-height:1.8;color:#dcebf4;margin:0;max-width:620px}
+    .about-intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:75px;align-items:center}
+    .about-intro-copy h2{font-size:46px;line-height:1.2;margin:8px 0 22px;color:#073c62}
+    .about-intro-copy .intro-lead{font-size:23px;line-height:1.7;color:#0b5c88;font-weight:700;margin:0 0 28px}
+    .about-intro-copy p:not(.intro-lead){font-size:17px;line-height:2;color:#536e81;margin:0 0 22px}
+    .about-intro-visual{position:relative;min-height:500px}
+    .about-photo-main{position:absolute;left:0;top:30px;width:72%;height:430px;overflow:hidden;border-radius:2px;box-shadow:0 22px 60px rgba(10,50,75,.18)}
+    .about-photo-main img{width:100%;height:100%;object-fit:cover;display:block}
+    .about-photo-small{position:absolute;right:0;bottom:0;width:46%;height:250px;border:12px solid #fff;overflow:hidden;box-shadow:0 18px 50px rgba(10,50,75,.18)}
+    .about-photo-small img{width:100%;height:100%;object-fit:cover;display:block}
+    .about-visual-label{position:absolute;right:3%;top:5%;padding:18px 22px;background:rgba(7,60,98,.94);color:#fff;box-shadow:0 12px 30px rgba(0,0,0,.14)}
+    .about-visual-label span{display:block;font:900 23px/1 Inter,sans-serif;letter-spacing:.08em}
+    .about-visual-label small{display:block;margin-top:7px;color:#bcd8e7;font:600 8px/1.4 Inter,sans-serif;letter-spacing:.18em}
+    .about-section-heading{display:flex;align-items:end;justify-content:space-between;gap:40px}
+    .about-section-heading>p{max-width:420px;margin:0;color:#728797;font-size:15px;line-height:1.9}
+    .about-capability-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:35px}
+    .about-capability-grid article{padding:38px 28px;display:grid;grid-template-columns:40px 1fr;gap:18px;border-right:1px solid var(--line)}
+    .about-capability-grid article:last-child{border-right:0}
+    .about-capability-grid article>span{font:700 13px Inter;color:#0b6f9f;letter-spacing:.08em}
+    .about-capability-grid h3{font-size:23px;color:#073c62;margin:0 0 9px}
+    .about-capability-grid p{font-size:14px;line-height:1.9;color:#60798a;margin:0}
+    .about-industries-section{background:#062940;color:#fff;position:relative;overflow:hidden}
+    .about-industries-section:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(32,132,185,.22),transparent 34%),linear-gradient(135deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:auto,44px 44px;opacity:.55}
+    .about-industries-section .container{position:relative;z-index:1}
+    .about-industries-section .eyebrow{color:#9cc7dc}
+    .about-industries-section h2{color:#fff}
+    .about-section-heading>p{color:#b9d0dc}
+    .about-industry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+    .about-industry-grid article{position:relative;height:220px;overflow:hidden;background:#0a334b}
+    .about-industry-grid article:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,18,31,.84))}
+    .about-industry-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+    .about-industry-grid article:hover img{transform:scale(1.04)}
+    .about-industry-grid article>div{position:absolute;left:20px;right:20px;bottom:18px;z-index:1}
+    .about-industry-grid span{font:700 12px Inter;color:#9fd1e7;letter-spacing:.15em}
+    .about-industry-grid h3{font-size:24px;margin:4px 0 0;color:#fff}
+    .industry-tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .industry-tag-row span{border:1px solid rgba(190,222,236,.25);padding:8px 14px;color:#d7e9f1;font-size:13px;background:rgba(255,255,255,.035)}
+    .about-values-section{background:#f7fafb}
+    .about-values{margin-top:10px;background:#fff;border:1px solid var(--line);box-shadow:0 15px 45px rgba(11,54,82,.05)}
+    .about-cta-eyebrow{color:#9fc5d8!important;margin-bottom:10px}
+    .about-cta{border-radius:0}
+    @media(max-width:1000px){
+      .about-intro-grid{grid-template-columns:1fr;gap:45px}.about-intro-visual{min-height:460px}.about-capability-grid{grid-template-columns:1fr 1fr}.about-capability-grid article:nth-child(2){border-right:0}.about-capability-grid article:nth-child(-n+2){border-bottom:1px solid var(--line)}.about-industry-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:700px){
+      .about-hero{min-height:470px}.about-hero-copy{padding:65px 0}.about-hero-copy h1{font-size:48px}.about-hero-copy p{font-size:17px}.about-intro-copy h2{font-size:36px}.about-intro-visual{min-height:390px}.about-photo-main{height:330px;width:78%;top:15px}.about-photo-small{height:190px;width:48%;border-width:8px}.about-visual-label{padding:12px 15px}.about-visual-label span{font-size:18px}.about-section-heading{display:block}.about-section-heading>p{margin-top:12px}.about-capability-grid{grid-template-columns:1fr}.about-capability-grid article{border-right:0!important;border-bottom:1px solid var(--line)!important}.about-capability-grid article:last-child{border-bottom:0!important}.about-industry-grid{grid-template-columns:1fr}.about-industry-grid article{height:190px}
+    }
+  
+    /* 關於友豐 Banner：搭配暖色公司照片 */
+    .about-hero-copy{position:relative;isolation:isolate}
+    .about-hero-copy::before{content:'';position:absolute;z-index:-1;left:-85px;top:38px;bottom:38px;width:790px;background:linear-gradient(90deg,rgba(255,249,239,.96) 0%,rgba(255,249,239,.90) 48%,rgba(255,249,239,.62) 68%,rgba(255,249,239,0) 100%);border-radius:0 130px 130px 0;pointer-events:none}
+    .about-hero-copy .eyebrow{color:#8f5f3f;text-shadow:0 1px 2px rgba(255,255,255,.55)}
+    .about-hero-copy h1{color:#40332d;text-shadow:0 2px 5px rgba(255,255,255,.55)}
+    .about-hero-copy p{color:#56463e;text-shadow:0 1px 3px rgba(255,255,255,.6)}
+    @media(max-width:900px){.about-hero-copy::before{left:-35px;width:680px;top:30px;bottom:30px;background:linear-gradient(90deg,rgba(255,249,239,.97) 0%,rgba(255,249,239,.90) 58%,rgba(255,249,239,0) 100%)}}
+
+  </style>
+</head>
+<body>
+<header class="site-header" id="top">
+  <a class="brand" href="index.html" aria-label="友豐貿易首頁"><img src="assets/yofeng-logo.png" alt="YOFENG 友豐貿易"></a>
+  <nav class="main-nav" aria-label="主要導覽">
+    <a href="index.html" data-i18n="nav.home">首頁</a>
+    <a href="about.html" data-i18n="nav.about">關於友豐</a>
+    <a href="products.html" data-i18n="nav.products">產品介紹</a>
+    <a href="solutions.html" data-i18n="nav.solutions">產業應用</a>
+    <a href="partner.html" data-i18n="nav.partner">合作夥伴</a>
+    <a href="catalog.html" data-i18n="nav.catalog">型錄下載</a>
+    <a href="news.html" data-i18n="nav.news">最新消息</a>
+  </nav>
+  <div class="header-actions">
+    <select id="language" aria-label="Language"><option value="zh-TW">繁中</option><option value="zh-CN">简中</option><option value="en">EN</option><option value="ja">日本語</option></select>
+    <a class="mitutoyo-mini" href="https://www.mitutoyo.co.jp/" target="_blank" rel="noopener noreferrer" aria-label="Mitutoyo official website"><img src="assets/mitutoyo-logo.svg" alt="Mitutoyo"></a>
+    <a class="btn btn-small" href="contact.html" data-i18n="nav.contact">聯絡我們</a>
+    <button class="menu-toggle" aria-label="開啟選單">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="about-hero">
+    <div class="about-hero-image" aria-hidden="true"></div>
+    <div class="container about-hero-inner">
+      <div class="about-hero-copy">
+        <div class="eyebrow">ABOUT YOFENG</div>
+        <h1 data-i18n="page.about">關於友豐</h1>
+        <p data-i18n="aboutpage.heroText">專業精密量測設備供應與服務，協助客戶找到適合的設備與應用方案。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-intro-grid">
+        <div class="about-intro-copy">
+          <div class="eyebrow">WHO WE ARE</div>
+          <h2 data-i18n="aboutpage.companyTitle">友豐貿易</h2>
+          <p class="intro-lead" data-i18n="aboutpage.introLead">專注於精密量測與相關設備的引進、供應與客戶服務。</p>
+          <p data-i18n="aboutpage.paragraph1">友豐貿易是由一群年輕又有活力的團隊組成的儀器公司。憑藉著十多年對電子科技產業的專業知識，以及對客戶的服務熱忱，我們持續了解產業需求與技術發展，提供相配合的設備與服務。</p>
+          <p data-i18n="aboutpage.paragraph2">我們引進三豐（Mitutoyo）等專業品牌的精密量測器材，協助客戶依照產品特性、製程需求與檢測目的，選擇合適的設備，並提供產品諮詢與後續服務。</p>
+          <p data-i18n="aboutpage.paragraph3">面對不斷進步的電子科技產業，友豐持續學習與探索，服務範圍涵蓋精密機械加工、電子零組件、PCB與SMT、IC封裝、晶圓封測、半導體、光電、軟板及太陽能電池等相關產業。</p>
+        </div>
+        <div class="about-intro-visual">
+          <div class="about-photo-main">
+            <img src="assets/company/yofeng-office.jpg" alt="友豐辦公環境">
+          </div>
+          <div class="about-photo-small">
+            <img src="assets/company/meeting.jpg" alt="友豐團隊會議空間">
+          </div>
+          <div class="about-visual-label"><span>YOFENG</span><small>TRADING · MEASUREMENT · SERVICE</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light-section about-values-section">
+    <div class="container">
+      <div class="section-heading about-section-heading">
+        <div>
+          <div class="eyebrow">OUR THREE BEST</div>
+          <h2 data-i18n="aboutpage.threeBestTitle">友豐對自我的要求「三個最」</h2>
+        </div>
+      </div>
+
+      <div class="three-values about-values">
+        <article class="three-value">
+          <div class="value-no">01 / QUALITY</div>
+          <h3 data-i18n="aboutpage.threeBestQuality">最佳品質</h3>
+          <p data-i18n="aboutpage.qualityText">在各種產品中，機台之使用，實驗室及品保相關設備，友豐都為客戶提供最優良的品質，性能最優越的產品。</p>
+          <div class="value-accent"></div>
+        </article>
+        <article class="three-value">
+          <div class="value-no">02 / EFFICIENCY</div>
+          <h3 data-i18n="aboutpage.threeBestEfficiency">最佳效率</h3>
+          <p data-i18n="aboutpage.efficiencyText">對於客戶需求和問題，友豐總以「處之如己任」的態度，以最短的時間幫客戶處理，解決問題。</p>
+          <div class="value-accent"></div>
+        </article>
+        <article class="three-value">
+          <div class="value-no">03 / SERVICE</div>
+          <h3 data-i18n="aboutpage.threeBestService">最好服務</h3>
+          <p data-i18n="aboutpage.serviceText">所有友豐的成員都秉持一顆熱忱的心，希望能與客戶建立良好且長久的合作關係，以此信念服務客戶。</p>
+          <div class="value-accent"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-industries-section">
+    <div class="container">
+      <div class="section-heading about-section-heading">
+        <div>
+          <div class="eyebrow">INDUSTRIES WE SERVE</div>
+          <h2 data-i18n="aboutpage.industriesTitle">服務相關產業</h2>
+        </div>
+        <p data-i18n="aboutpage.industriesText">依照不同產業的製程與檢測需求，提供對應的專業設備。</p>
+      </div>
+
+      <div class="about-industry-grid">
+        <article><img src="assets/industry/precision-machinery.png" alt="精密機械加工"><div><span>01</span><h3 data-i18n="aboutpage.industryPrecision">精密機械加工</h3></div></article>
+        <article><img src="assets/industry/electronics.png" alt="電子零組件"><div><span>02</span><h3 data-i18n="aboutpage.industryComponents">電子零組件</h3></div></article>
+        <article><img src="assets/industry/pcb-smt.png" alt="PCB與SMT"><div><span>03</span><h3 data-i18n="aboutpage.industryPCB">PCB與SMT</h3></div></article>
+        <article><img src="assets/industry/ic-packaging.png" alt="IC封裝"><div><span>04</span><h3 data-i18n="aboutpage.industryIC">IC封裝</h3></div></article>
+        <article><img src="assets/industry/semiconductor.png" alt="半導體"><div><span>05</span><h3 data-i18n="aboutpage.industrySemiconductor">半導體</h3></div></article>
+        <article><img src="assets/industry/optoelectronics.png" alt="光電"><div><span>06</span><h3 data-i18n="aboutpage.industryOptoelectronics">光電</h3></div></article>
+      </div>
+      <div class="industry-tag-row">
+        <span data-i18n="aboutpage.industryPassive">加工被動元件</span><span data-i18n="aboutpage.industryWafer">晶圓封測</span><span data-i18n="aboutpage.industryFlexibleBoard">軟板</span><span data-i18n="aboutpage.industrySolar">太陽能電池</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section slim-cta">
+    <div class="container">
+      <div class="about-cta">
+        <div>
+          <div class="eyebrow about-cta-eyebrow">YOFENG · YOUR MEASUREMENT PARTNER</div>
+          <h2 data-i18n="aboutpage.ctaQuestion">需要精密量測設備？</h2>
+          <p data-i18n="aboutpage.ctaText">歡迎與友豐聯繫，讓我們依照您的需求提供合適的產品資訊與設備建議。</p>
+        </div>
+        <a class="btn btn-primary" href="contact.html" data-i18n="nav.contact">聯絡我們 →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><a href="index.html"><img src="assets/yofeng-logo.png" alt="YOFENG"></a><small>Yeou Feng Trading Co., Ltd.</small></div>
+    <div class="footer-links">
+      <a href="about.html" data-i18n="nav.about">關於友豐</a>
+      <a href="products.html" data-i18n="nav.products">產品介紹</a>
+      <a href="solutions.html" data-i18n="nav.solutions">產業應用</a>
+      <a href="partner.html" data-i18n="nav.partner">合作夥伴</a>
+      <a href="catalog.html" data-i18n="nav.catalog">型錄下載</a>
+      <a href="news.html" data-i18n="nav.news">最新消息</a>
+      <a href="contact.html" data-i18n="nav.contact">聯絡我們</a>
+    </div>
+    <div class="copyright">© 2026 YEOU FENG TRADING CO., LTD.</div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

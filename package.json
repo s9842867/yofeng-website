@@ -1,0 +1,15 @@
+{
+  "name": "yofeng-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "YOFENG Trading website with cloud news management",
+  "main": "server.js",
+  "scripts": {"start": "node server.js"},
+  "engines": {"node": ">=20"},
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1"
+  }
+}

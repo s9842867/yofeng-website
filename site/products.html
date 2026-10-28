@@ -1,0 +1,210 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="友豐貿易有限公司｜依照原始產品資料夾分類瀏覽精密量測設備。"><title data-i18n="title.products">產品介紹｜YOFENG 友豐貿易</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><style>
+/* Premium product directory — visual layer only; product data and copy remain unchanged. */
+.product-directory{
+  position:relative;
+  padding-top:72px;
+  background:
+    radial-gradient(circle at 8% 8%,rgba(0,99,154,.07),transparent 24%),
+    radial-gradient(circle at 92% 28%,rgba(17,45,66,.06),transparent 28%);
+}
+.product-directory:before{
+  content:"";
+  position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,#0b628f 18%,#0b628f 82%,transparent);
+  opacity:.35;
+}
+.product-toolbar{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(320px,420px);
+  gap:40px;align-items:end;margin-bottom:28px;
+}
+.product-toolbar h2{font-size:34px;letter-spacing:-.035em;margin:8px 0 0}
+.product-search{
+  min-width:0;padding:7px 7px 7px 16px;border:1px solid rgba(9,50,73,.13);
+  border-radius:14px;background:rgba(255,255,255,.78);
+  box-shadow:0 10px 35px rgba(12,40,58,.07);
+  backdrop-filter:blur(10px);
+}
+.product-search span{
+  display:block;font:700 10px/1.2 Inter,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:#71818d;margin:3px 0 7px;
+}
+.product-search input{
+  width:100%;box-sizing:border-box;padding:10px 10px 10px 0;border:0;outline:0;
+  background:transparent;color:#102b3d;font:500 15px "Noto Sans TC",sans-serif;
+}
+.product-search input::placeholder{color:#9aa7b0}
+.category-tabs,.subcategory-tabs{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 14px}
+.category-tab,.subcategory-tab{
+  border:1px solid rgba(16,56,78,.13);background:rgba(255,255,255,.82);color:#263d4d;
+  border-radius:999px;padding:11px 17px;cursor:pointer;font:600 14px "Noto Sans TC",sans-serif;
+  box-shadow:0 4px 14px rgba(20,40,60,.035);transition:all .22s ease;
+}
+.category-tab.active,.subcategory-tab.active{
+  background:#10283a;color:#fff;border-color:#10283a;
+  box-shadow:0 9px 22px rgba(16,40,58,.18);
+}
+.category-tab:hover,.subcategory-tab:hover{transform:translateY(-1px);border-color:#0b628f;color:#075b86}
+.category-tab.active:hover,.subcategory-tab.active:hover{color:#fff;background:#12374d;border-color:#12374d}
+.subcategory-wrap{
+  min-height:48px;margin:16px 0 28px;padding:18px 20px;
+  border:1px solid rgba(15,53,75,.10);border-radius:18px;
+  background:linear-gradient(135deg,rgba(247,250,251,.96),rgba(239,245,248,.82));
+  box-shadow:inset 0 1px rgba(255,255,255,.9),0 10px 30px rgba(20,45,65,.045);
+}
+.subcategory-title{
+  font-size:11px;font-weight:800;letter-spacing:.16em;color:#6e808c;
+  margin-bottom:11px;text-transform:uppercase;
+}
+.product-directory-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;
+}
+.real-product-card{
+  position:relative;overflow:hidden;border:1px solid rgba(12,51,72,.12);
+  border-radius:20px;background:#fff;display:flex;flex-direction:column;
+  box-shadow:0 12px 36px rgba(18,43,61,.07);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.real-product-card:before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,#0b628f,#7faabd,transparent);
+  opacity:.7;z-index:2;
+}
+.real-product-card:hover{
+  transform:translateY(-5px);border-color:rgba(0,99,154,.25);
+  box-shadow:0 20px 48px rgba(15,48,68,.13);
+}
+.real-product-card .product-photo{
+  height:245px;
+  background:
+    radial-gradient(circle at 70% 28%,rgba(104,155,181,.18),transparent 25%),
+    linear-gradient(145deg,#eef3f6,#f9fbfc 48%,#e6edf1);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+  box-sizing:border-box;position:relative;overflow:hidden;
+}
+.real-product-card .product-photo:before{
+  content:"";position:absolute;inset:14px;
+  border:1px solid rgba(0,99,154,.09);border-radius:14px;
+  background:
+    linear-gradient(90deg,transparent 49.8%,rgba(0,99,154,.035) 50%,transparent 50.2%),
+    linear-gradient(0deg,transparent 49.8%,rgba(0,99,154,.035) 50%,transparent 50.2%);
+  background-size:42px 42px;pointer-events:none;
+}
+.real-product-card .product-photo:after{
+  content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(0,99,154,.09);
+  border-radius:50%;right:-75px;top:-78px;box-shadow:0 0 0 20px rgba(0,99,154,.025),0 0 0 42px rgba(0,99,154,.018);
+}
+.real-product-card .product-photo img{
+  width:100%;height:100%;object-fit:contain;position:relative;z-index:1;
+  filter:drop-shadow(0 14px 15px rgba(15,35,48,.12));
+  transition:transform .3s ease;
+}
+.real-product-card:hover .product-photo img{transform:scale(1.025)}
+.real-product-body{padding:23px 23px 21px;position:relative}
+.real-product-body h3{
+  margin:7px 0 13px;font-size:21px;line-height:1.4;letter-spacing:-.02em;color:#102b3d;
+}
+.real-product-body p{
+  margin:0;color:#62727e;line-height:1.82;white-space:pre-line;font-size:14px;
+}
+.product-description .desc-line{
+  display:block;position:relative;padding-left:0;margin:0 0 10px;
+}
+.product-description .desc-line:last-child{margin-bottom:0}
+.product-description .desc-line.has-bullet{padding-left:19px}
+.product-description .desc-line.has-bullet:before{
+  content:"";position:absolute;left:2px;top:.72em;width:6px;height:6px;border-radius:50%;
+  background:#0b628f;box-shadow:0 0 0 4px rgba(11,98,143,.08);
+}
+.product-meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+.product-chip{
+  font-size:10px;font-weight:700;letter-spacing:.06em;padding:6px 10px;border-radius:999px;
+  background:#edf4f7;color:#35657c;border:1px solid rgba(11,98,143,.08);
+}
+.product-actions{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  margin-top:22px;padding-top:15px;border-top:1px solid #edf1f3;
+}
+.product-actions a{
+  font-size:13px;text-decoration:none;font-weight:700;color:#096593;
+  transition:transform .2s ease,color .2s ease;
+}
+.product-actions a:hover{color:#073f5b;transform:translateX(2px)}
+.product-empty{
+  padding:56px;text-align:center;color:#667085;border:1px dashed #cbd6dd;
+  border-radius:18px;background:rgba(255,255,255,.65)
+}
+.count-note{
+  color:#71808b;font-size:13px;margin:10px 0 24px;padding-left:2px;
+}
+.slim-cta{position:relative}
+@media(max-width:900px){
+  .product-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .product-toolbar{grid-template-columns:1fr;align-items:stretch;gap:20px}
+  .product-search{min-width:0}
+}
+@media(max-width:600px){
+  .product-directory{padding-top:52px}
+  .product-directory-grid{grid-template-columns:1fr}
+  .category-tab,.subcategory-tab{padding:9px 13px;font-size:13px}
+  .real-product-card .product-photo{height:220px}
+  .product-toolbar h2{font-size:28px}
+}
+/* Bullet rendering fix: the original "●" is text data, while the left dot is the UI marker. Show only one dot. */
+.product-description .desc-line:not(.has-bullet)::before{content:none!important;display:none!important}
+.product-description .desc-line.has-bullet{padding-left:19px}
+</style></head><body><header class="site-header" id="top">
+  <a class="brand" href="index.html" aria-label="友豐貿易首頁"><img src="assets/yofeng-logo.png" alt="YOFENG 友豐貿易"></a>
+  <nav class="main-nav" aria-label="主要導覽"><a href="index.html" data-i18n="nav.home">首頁</a><a href="about.html" data-i18n="nav.about">關於友豐</a><a class="active" href="products.html" data-i18n="nav.products">產品介紹</a><a href="solutions.html" data-i18n="nav.solutions">產業應用</a><a href="partner.html" data-i18n="nav.partner">合作夥伴</a><a href="catalog.html" data-i18n="nav.catalog">型錄下載</a><a href="news.html" data-i18n="nav.news">最新消息</a></nav>
+  <div class="header-actions"><select id="language" aria-label="Language"><option value="zh-TW">繁中</option><option value="zh-CN">简中</option><option value="en">EN</option><option value="ja">日本語</option></select><a class="mitutoyo-mini" href="https://www.mitutoyo.co.jp/" target="_blank" rel="noopener noreferrer"><img src="assets/mitutoyo-logo.svg" alt="Mitutoyo"></a><a class="btn btn-small" href="contact.html" data-i18n="nav.contact">聯絡我們</a><button class="menu-toggle" aria-label="開啟選單">☰</button></div>
+</header><main><section class="page-hero page-hero-banner page-hero-products"><div class="container"><div class="eyebrow">PRODUCTS</div><h1 data-i18n="page.products">產品介紹</h1><p class="product-hero-tagline" data-i18n="productspage.heroTagline">引進專業量測設備，為每一份精準把關。</p></div></section><section class="section product-directory"><div class="container"><div class="product-toolbar"><div><div class="eyebrow">PRODUCT DIRECTORY</div><h2 data-product-i18n="productDirectory.directoryTitle">依產品資料夾分類尋找</h2></div><label class="product-search"><span data-product-i18n="productDirectory.searchLabel">搜尋產品</span><input id="productSearch" type="search" placeholder="輸入產品名稱、分類或關鍵字…"></label></div><div class="category-tabs" id="categoryTabs"></div><div class="subcategory-wrap" id="subcategoryWrap"><div class="subcategory-title" data-product-i18n="productDirectory.subcategoryTitle">子分類</div><div class="subcategory-tabs" id="subcategoryTabs"></div></div><div class="count-note" id="countNote"></div><div class="product-directory-grid" id="productDirectory"></div><div class="product-empty" id="productEmpty" data-product-i18n="productDirectory.empty" hidden>找不到符合條件的產品。</div></div></section><section class="slim-cta"><div class="container"><div class="eyebrow light">NEED HELP?</div><h2 data-product-i18n="productDirectory.ctaTitle">不確定從哪一項設備開始？</h2><a class="btn btn-primary" href="contact.html" data-i18n="nav.contact">聯絡友豐 →</a></div></section></main><footer class="footer"><div class="container footer-grid"><div><a href="index.html"><img src="assets/yofeng-logo.png" alt="YOFENG"></a><small>Yeou Feng Trading Co., Ltd.</small></div><div class="footer-links"><a href="about.html" data-i18n="nav.about">關於友豐</a><a href="products.html" data-i18n="nav.products">產品介紹</a><a href="solutions.html" data-i18n="nav.solutions">產業應用</a><a href="partner.html" data-i18n="nav.partner">合作夥伴</a><a href="catalog.html" data-i18n="nav.catalog">型錄下載</a><a href="news.html" data-i18n="nav.news">最新消息</a><a href="contact.html" data-i18n="nav.contact">聯絡我們</a></div><div class="copyright">© 2026 YEOU FENG TRADING CO., LTD.</div></div></footer><script>const PRODUCTS=[{"id": "p01", "name": "Mitutoyo-NIR物鏡", "cat": "光學類系列產品", "sub": "各類物鏡", "img": "p01.jpg", "pdf": "p01.pdf", "desc": "● 該系列可對整個可見光和近紅外線、紫外線範圍內的色差進行校正，同時提高了近紅外線及紫外線範圍內的透射率。"}, {"id": "p02", "name": "Tube Lens", "cat": "光學類系列產品", "sub": "各類物鏡", "img": "p02.jpg", "pdf": "", "desc": "● 特點說明:\n\nMT-1,2,40:Visible wavelength\n\nrange (435.8-656.3nm)\n\nMT-L:Near-ultraviolet(355nm)\n\nto near-infrared(1064nm)\n\nMT-L4:Ultraviolet(266nm)\n\nto visible(620nm)"}, {"id": "p03", "name": "Mitutoyo-UV物鏡", "cat": "光學類系列產品", "sub": "各類物鏡", "img": "p03.jpg", "pdf": "p03.pdf", "desc": "● 該系列可對整個可見光和近紅外線、紫外線範圍內的色差進行校正，同時提高了近紅外線及紫外線範圍內的透射率。"}, {"id": "p04", "name": "Mitutoyo-BD物鏡", "cat": "光學類系列產品", "sub": "各類物鏡", "img": "p04.jpg", "pdf": "p04.pdf", "desc": "M Plan Apo系列產品本身有一個完整的光學系統。通常，加長物鏡的工作距離，會導致多種色差問題發生。而MPlan Apo系列的複消色透鏡通過選用低折射率反常色散玻璃和超低色散玻璃，實現了大範圍可見光的色差校正。這兩種玻璃的波長折射率不同于普通光學玻璃。"}, {"id": "p05", "name": "Mitutoyo-Apo物鏡", "cat": "光學類系列產品", "sub": "各類物鏡", "img": "p05.jpg", "pdf": "p05.pdf", "desc": "● M Plan Apo系列產品本身有一個完整的光學系統。通常，加長物鏡的工作距離，會導致多種色差問題發生。而MPlan Apo系列的複消色透鏡通過選用低折射率反常色散玻璃和超低色散玻璃，實現了大範圍可見光的色差校正。這兩種玻璃的波長折射率不同于普通光學玻璃。"}, {"id": "p06", "name": "Mitutoyo-NUV物鏡", "cat": "光學類系列產品", "sub": "各類物鏡", "img": "p06.jpg", "pdf": "p06.pdf", "desc": "● 該系列可對整個可見光和近紅外線、紫外線範圍內的色差進行校正，同時提高了近紅外線及紫外線範圍內的透射率。"}, {"id": "p07", "name": "電動影像測定機", "cat": "光學類系列產品", "sub": "顯微鏡", "img": "p07.jpg", "pdf": "p07.pdf", "desc": "● 工件擺設完成後，點擊量測按鍵立即完成量測。\n\n● 量測結果及公差判定一目了然，OK及NG立即判定。\n\n● 搭載圖像式的操作引導說明功能。"}, {"id": "p08", "name": "手動影像測定機", "cat": "光學類系列產品", "sub": "顯微鏡", "img": "p08.jpg", "pdf": "p08.pdf", "desc": "● 工件擺設完成後，點擊量測按鍵立即完成量測。\n\n● 量測結果及公差判定一目了然，OK及NG立即判定。\n\n● 搭載圖像式的操作引導說明功能。"}, {"id": "p09", "name": "高倍率觀察顯微鏡FS-70", "cat": "光學類系列產品", "sub": "顯微鏡", "img": "p09.jpg", "pdf": "p09.pdf", "desc": "1~2倍變焦鏡頭及超長作動距離對物鏡SL200X與目鏡10倍之倍率組合，故總合倍率可做2000~8000倍的放大觀察。"}, {"id": "p10", "name": "二次元影像測定機", "cat": "光學類系列產品", "sub": "顯微鏡", "img": "p10.jpg", "pdf": "p10.pdf", "desc": "● 帶有閃爍抑制的全新光學系統。\n\n● 使用高NA對物鏡(長作動距離)。支援4000X目鏡觀測。\n\n● 可調式光圈將光路內亂射降至最低。"}, {"id": "p11", "name": "廣視頻顯微鏡裝置WIDE VMU", "cat": "光學類系列產品", "sub": "顯微鏡", "img": "p11.jpg", "pdf": "p11.pdf", "desc": "袖珍、輕型且易安裝的顯微鏡，用於半導體製造時的CCD監視器上。\n\n比一般的 VMU 擁有更為廣泛的觀測範圍，檢查速度變快進而提昇設備處理速度為最大的優勢。\n\n適用於F MOUNT、CCD。"}, {"id": "p12", "name": "觀察用顯微鏡VMU系列", "cat": "光學類系列產品", "sub": "顯微鏡", "img": "p12.jpg", "pdf": "p12.pdf", "desc": "袖珍、輕型且易安裝的顯微鏡，用於半導體製造時的CCD監視器上。\n\n輕量、小型顯微鏡可搭配於各種專用檢查裝置上，用於觀察或雷射加工上"}, {"id": "p13", "name": "小型高精度真圓度測定機", "cat": "形狀類系列產品", "sub": "真圓度", "img": "p13.jpg", "pdf": "p13.pdf", "desc": "● 適用於小型物品的小型高精度真圓度、圓筒形狀測定機。\n\n● 迴轉台搭載空氣軸承驅動。"}, {"id": "p14", "name": "高精度真圓度圓筒形狀測定機", "cat": "形狀類系列產品", "sub": "真圓度", "img": "p14.jpg", "pdf": "p14.pdf", "desc": "● 配備高速自動調心、調水平之功能。\n\n● 採用FEM解析之構造設計，實現以高次元同時達到世界最高精度等級及操作性高、高解析能力之程式組合，來滿足高精度量測需求。"}, {"id": "p15", "name": "中型真圓度圓筒形狀測定機", "cat": "形狀類系列產品", "sub": "真圓度", "img": "p15.jpg", "pdf": "p15.pdf", "desc": "● 節省空間設計。\n\n● 設有安全機制。\n\n● 高精度迴轉台。"}, {"id": "p16", "name": "高精度輪廓形狀測定機", "cat": "形狀類系列產品", "sub": "輪廓", "img": "p16.jpg", "pdf": "p16.pdf", "desc": "● 藉由上下面連續測量機能,即可簡易地測量上下面。"}, {"id": "p17", "name": "小型表面粗度測定機", "cat": "形狀類系列產品", "sub": "粗度", "img": "p17.jpg", "pdf": "p17.pdf", "desc": "● 全新進化的小型表面粗度測定機。\n\n● 提供更豐富的選項、操作更簡易、量測更精確。"}, {"id": "p18", "name": "表面粗度測定機", "cat": "形狀類系列產品", "sub": "粗度", "img": "p18.jpg", "pdf": "p18.pdf", "desc": "● 提升使用方便性、更多功能！\n\n●結合新的選配組合，可實現更高的處理能力。"}, {"id": "p19", "name": "雷射修補機", "cat": "半導體系列產品", "sub": "半導體系列產品", "img": "p19.jpg", "pdf": "", "desc": "● 1064nm波長之高功率雷射模組\n\n● 光罩修補線路及金屬性污點修補"}, {"id": "p20", "name": "IR顯微鏡", "cat": "半導體系列產品", "sub": "半導體系列產品", "img": "p20.jpg", "pdf": "", "desc": "● 檢測功能：利用特殊光學可穿透矽晶圓並可完整呈現,防止不良的發生\n\n● 適合半導體業界檢測使用,如si interposer、TSV、Bumping、Flip chip、FC-CSP、FC-BGA、MEMS、WLC-SP、封裝後成品等等。"}, {"id": "p21", "name": "CNC三次元測定機", "cat": "座標影像系列產品", "sub": "CNC 三次元", "img": "p21.jpg", "pdf": "p21.pdf", "desc": "● 採用FEM解析技術，富有高級感的嶄新設計，在本體及外觀都盡可能採用一體成型的方式製作，有豐富的測頭系統可供選擇搭配。\n\n● 實現靜音，高速驅動，高速加速性。"}, {"id": "p22", "name": "高精度CNC三次元測定機", "cat": "座標影像系列產品", "sub": "CNC 三次元", "img": "p22.jpg", "pdf": "p22.pdf", "desc": "● 為了提高機身高剛性而重新設計了機身結構，以確保高速、高精度測量。\n\n● 通過新開發的高剛性結構設計結合新開發的補償技術，使高性能掃描測量得以實現。\n\n● 超高精度線性尺為各軸提供更高解析度、精度，及其他的整體性能。"}, {"id": "p23", "name": "CNC影像測定機", "cat": "座標影像系列產品", "sub": "CNC 影像測定", "img": "p23.jpg", "pdf": "p23.pdf", "desc": "● 可搭載雷射或接觸式測頭。\n\n● X軸最大行程可達2000mm。\n\n● 電子零件量測之畫像測定機。"}, {"id": "p24", "name": "高速CNC影像測定機", "cat": "座標影像系列產品", "sub": "CNC 影像測定", "img": "p24.jpg", "pdf": "p24.pdf", "desc": "● STREAM模式高速量測。\n\n● 新開發高亮度LED照明。"}, {"id": "p25", "name": "測微器", "cat": "精密量具", "sub": "精密量具", "img": "p25.jpg", "pdf": "", "desc": "● 測微器。\n\n● 由於產品種類眾多，若需報價，敬請來電。"}, {"id": "p26", "name": "測微頭", "cat": "精密量具", "sub": "精密量具", "img": "p26.jpg", "pdf": "", "desc": "● 測微頭。\n\n● 由於產品種類眾多，若需報價，敬請來電。"}, {"id": "p27", "name": "量表", "cat": "精密量具", "sub": "精密量具", "img": "p27.jpg", "pdf": "", "desc": "● 各式量表 / 數位量表。\n\n● 由於產品種類眾多，若需報價，敬請來電。"}, {"id": "p28", "name": "卡尺", "cat": "精密量具", "sub": "精密量具", "img": "p28.jpg", "pdf": "", "desc": "游標卡尺。"}];const CAT_ORDER=["光學類系列產品", "形狀類系列產品", "半導體系列產品", "座標影像系列產品", "精密量具"];const SUB_ORDER={"光學類系列產品": ["各類物鏡", "顯微鏡"], "形狀類系列產品": ["真圓度", "輪廓", "粗度"], "半導體系列產品": ["半導體系列產品"], "座標影像系列產品": ["CNC 三次元", "CNC 影像測定"], "精密量具": ["精密量具"]};
+let activeCat='ALL',activeSub='ALL',query='';
+const initialCategory=new URLSearchParams(window.location.search).get('cat');
+if(initialCategory && CAT_ORDER.includes(initialCategory)){activeCat=initialCategory;}
+const catTabs=document.getElementById('categoryTabs'),subTabs=document.getElementById('subcategoryTabs'),grid=document.getElementById('productDirectory'),empty=document.getElementById('productEmpty'),countNote=document.getElementById('countNote'),search=document.getElementById('productSearch');
+function productT(key, fallback){const lang=localStorage.getItem('yofeng-lang')||'zh-TW';const dict=window.productUITranslations?.[lang]||window.productUITranslations?.['zh-TW']||{};return dict[key]??fallback}
+function productLabel(prefix, value){return productT(`${prefix}.${value}`, value)}
+function labelCount(n){return `(${n})`}
+function renderCategoryTabs(){const all=PRODUCTS.length;catTabs.innerHTML=`<button class="category-tab ${activeCat==='ALL'?'active':''}" data-cat="ALL">${esc(productT('productDirectory.all','全部'))} ${labelCount(all)}</button>`+CAT_ORDER.map(c=>{const n=PRODUCTS.filter(p=>p.cat===c).length;return `<button class="category-tab ${activeCat===c?'active':''}" data-cat="${esc(c)}">${esc(productLabel('category',c))} ${labelCount(n)}</button>`}).join('');catTabs.querySelectorAll('button').forEach(b=>b.onclick=()=>{activeCat=b.dataset.cat;activeSub='ALL';renderAll()})}
+function renderSubTabs(){const wrap=document.getElementById('subcategoryWrap');const subs=activeCat==='ALL'?[]:(SUB_ORDER[activeCat]||[]);if(!subs.length){if(wrap)wrap.style.display='none';subTabs.innerHTML='';return}if(wrap)wrap.style.display='';subTabs.innerHTML=`<button class="subcategory-tab ${activeSub==='ALL'?'active':''}" data-sub="ALL">${esc(productT('productDirectory.all','全部'))}</button>`+subs.map(s=>`<button class="subcategory-tab ${activeSub===s?'active':''}" data-sub="${esc(s)}">${esc(productLabel('sub',s))}</button>`).join('');subTabs.querySelectorAll('button').forEach(b=>b.onclick=()=>{activeSub=b.dataset.sub;renderAll()})}
+function esc(s){return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
+const PRODUCT_DESCRIPTION_TRANSLATIONS={"p01":{"zh-CN":"● 该系列可对整个可见光和近红外线、紫外线范围内的色差进行校正，同时提高近红外线及紫外线范围内的透射率。","en":"● This series corrects chromatic aberration across the visible, near-infrared, and ultraviolet ranges while improving transmittance in the near-infrared and ultraviolet ranges.","ja":"● 可視光、近赤外線、紫外線の全域で色収差を補正し、近赤外線および紫外線域の透過率も向上させます。"},"p02":{"zh-CN":"● 特点说明:\n\nMT-1,2,40：可见光波长\n\n范围（435.8-656.3nm）\n\nMT-L：近紫外线（355nm）\n\n至近红外线（1064nm）\n\nMT-L4：紫外线（266nm）\n\n至可见光（620nm）","en":"● Features:\n\nMT-1,2,40: Visible wavelength\n\nrange (435.8-656.3nm)\n\nMT-L: Near-ultraviolet (355nm)\n\nto near-infrared (1064nm)\n\nMT-L4: Ultraviolet (266nm)\n\nto visible (620nm)","ja":"● 特長:\n\nMT-1,2,40：可視光波長\n\n範囲（435.8-656.3nm）\n\nMT-L：近紫外線（355nm）\n\n～近赤外線（1064nm）\n\nMT-L4：紫外線（266nm）\n\n～可視光（620nm）"},"p03":{"zh-CN":"● 该系列可对整个可见光和近红外线、紫外线范围内的色差进行校正，同时提高近红外线及紫外线范围内的透射率。","en":"● This series corrects chromatic aberration across the visible, near-infrared, and ultraviolet ranges while improving transmittance in the near-infrared and ultraviolet ranges.","ja":"● 可視光、近赤外線、紫外線の全域で色収差を補正し、近赤外線および紫外線域の透過率も向上させます。"},"p04":{"zh-CN":"M Plan Apo系列产品本身具有完整的光学系统。通常，增加物镜的工作距离会导致多种色差问题。M Plan Apo系列的复消色差透镜通过选用低折射率反常色散玻璃和超低色散玻璃，实现大范围可见光的色差校正。这两种玻璃的波长折射率不同于普通光学玻璃。","en":"The M Plan Apo series has a complete optical system. Increasing the working distance of an objective lens can normally cause various chromatic aberration issues. The M Plan Apo series uses low-refractive-index anomalous-dispersion glass and ultra-low-dispersion glass to correct chromatic aberration across a wide visible-light range. These glasses have wavelength-dependent refractive indices different from ordinary optical glass.","ja":"M Plan Apoシリーズは、それ自体で完全な光学系を構成しています。通常、対物レンズの作動距離を長くすると、さまざまな色収差が発生します。M Plan Apoシリーズは、低屈折率異常分散ガラスと超低分散ガラスを採用した複消色レンズにより、広い可視光域で色収差を補正します。これらのガラスは一般的な光学ガラスとは異なる波長分散特性を持ちます。"},"p05":{"zh-CN":"● M Plan Apo系列产品本身具有完整的光学系统。通常，增加物镜的工作距离会导致多种色差问题。M Plan Apo系列的复消色差透镜通过选用低折射率反常色散玻璃和超低色散玻璃，实现大范围可见光的色差校正。这两种玻璃的波长折射率不同于普通光学玻璃。","en":"● The M Plan Apo series has a complete optical system. Increasing the working distance of an objective lens can normally cause various chromatic aberration issues. The series uses low-refractive-index anomalous-dispersion glass and ultra-low-dispersion glass to correct chromatic aberration across a wide visible-light range. These glasses have wavelength-dependent refractive indices different from ordinary optical glass.","ja":"● M Plan Apoシリーズは、それ自体で完全な光学系を構成しています。通常、対物レンズの作動距離を長くすると、さまざまな色収差が発生します。低屈折率異常分散ガラスと超低分散ガラスを採用し、広い可視光域で色収差を補正します。これらのガラスは一般的な光学ガラスとは異なる波長分散特性を持ちます。"},"p06":{"zh-CN":"● 该系列可对整个可见光和近红外线、紫外线范围内的色差进行校正，同时提高近红外线及紫外线范围内的透射率。","en":"● This series corrects chromatic aberration across the visible, near-infrared, and ultraviolet ranges while improving transmittance in the near-infrared and ultraviolet ranges.","ja":"● 可視光、近赤外線、紫外線の全域で色収差を補正し、近赤外線および紫外線域の透過率も向上させます。"},"p07":{"zh-CN":"● 工件摆放完成后，点击测量按钮即可立即完成测量。\n\n● 测量结果及公差判定一目了然，可立即判定OK及NG。\n\n● 搭载图像式操作引导说明功能。","en":"● After the workpiece is positioned, click the measurement button to complete the measurement immediately.\n\n● Measurement results and tolerance judgments are easy to see, with immediate OK/NG judgment.\n\n● Includes image-based operation guidance.","ja":"● ワークをセットした後、測定ボタンをクリックするだけですぐに測定できます。\n\n● 測定結果と公差判定を一目で確認でき、OK/NGを即座に判定します。\n\n● 画像による操作ガイド機能を搭載しています。"},"p08":{"zh-CN":"● 工件摆放完成后，点击测量按钮即可立即完成测量。\n\n● 测量结果及公差判定一目了然，可立即判定OK及NG。\n\n● 搭载图像式操作引导说明功能。","en":"● After the workpiece is positioned, click the measurement button to complete the measurement immediately.\n\n● Measurement results and tolerance judgments are easy to see, with immediate OK/NG judgment.\n\n● Includes image-based operation guidance.","ja":"● ワークをセットした後、測定ボタンをクリックするだけですぐに測定できます。\n\n● 測定結果と公差判定を一目で確認でき、OK/NGを即座に判定します。\n\n● 画像による操作ガイド機能を搭載しています。"},"p09":{"zh-CN":"1～2倍变焦镜头及超长工作距离物镜SL200X与10倍目镜组合，因此总倍率可进行2000～8000倍的放大观察。","en":"With a 1–2× zoom lens, the SL200X ultra-long working-distance objective, and a 10× eyepiece, the total magnification can reach 2000–8000× for enlarged observation.","ja":"1～2倍ズームレンズ、超長作動距離対物レンズSL200X、10倍接眼レンズの組み合わせにより、総合倍率2000～8000倍で観察できます。"},"p10":{"zh-CN":"● 配备抑制闪烁的全新光学系统。\n\n● 使用高NA物镜（长工作距离），支持4000X目镜观察。\n\n● 可调光圈将光路内的杂散光降至最低。","en":"● A new optical system with flicker suppression.\n\n● Uses a high-NA objective with a long working distance and supports 4000× eyepiece observation.\n\n● An adjustable aperture minimizes stray light in the optical path.","ja":"● フリッカーを抑制する新しい光学系を採用しています。\n\n● 高NA・長作動距離の対物レンズを使用し、4000倍接眼レンズでの観察に対応します。\n\n● 可変絞りにより光路内の迷光を最小限に抑えます。"},"p11":{"zh-CN":"小巧、轻量且易于安装的显微镜，用于半导体制造时的CCD监视器。\n\n相比一般VMU，拥有更广泛的观察范围，检查速度更快，从而提升设备处理速度。\n\n适用于F MOUNT、CCD。","en":"A compact, lightweight and easy-to-install microscope for CCD monitors used in semiconductor manufacturing.\n\nCompared with standard VMU models, it provides a wider observation range, enabling faster inspection and higher equipment throughput.\n\nCompatible with F MOUNT and CCD.","ja":"半導体製造時のCCDモニターに使用する、小型・軽量で取り付けやすい顕微鏡です。\n\n一般的なVMUより広い観察範囲を持ち、検査速度を高めて設備の処理能力を向上させます。\n\nF MOUNT、CCDに対応します。"},"p12":{"zh-CN":"小巧、轻量且易于安装的显微镜，用于半导体制造时的CCD监视器。\n\n轻量、小型显微镜可搭配各种专用检查装置，用于观察或激光加工。","en":"A compact, lightweight and easy-to-install microscope for CCD monitors used in semiconductor manufacturing.\n\nThe lightweight, compact microscope can be integrated into various dedicated inspection systems for observation or laser processing.","ja":"半導体製造時のCCDモニターに使用する、小型・軽量で取り付けやすい顕微鏡です。\n\n軽量・小型のため、さまざまな専用検査装置に組み込み、観察やレーザー加工に使用できます。"},"p13":{"zh-CN":"● 适用于小型物品的小型高精度真圆度、圆筒形状测定机。\n\n● 转台采用空气轴承驱动。","en":"● A compact, high-precision roundness and cylindrical-form measuring machine for small workpieces.\n\n● The rotary table is driven by an air bearing.","ja":"● 小型ワークに適した小型・高精度の真円度・円筒形状測定機です。\n\n● 回転テーブルにはエアベアリング駆動を採用しています。"},"p14":{"zh-CN":"● 配备高速自动调心、调水平功能。\n\n● 采用FEM分析结构设计，以高层次同时实现世界最高精度等级、高操作性和高解析能力的程序组合，满足高精度测量需求。","en":"● Equipped with high-speed automatic centering and leveling functions.\n\n● FEM-analyzed structural design achieves a high level of precision together with excellent operability and high-resolution measurement programs to meet high-precision measurement needs.","ja":"● 高速自動調心・自動レベリング機能を搭載しています。\n\n● FEM解析による構造設計を採用し、世界最高水準の精度と高い操作性・高分解能を両立したプログラム構成で、高精度測定の要求に応えます。"},"p15":{"zh-CN":"● 节省空间的设计。\n\n● 配备安全机制。\n\n● 高精度转台。","en":"● Space-saving design.\n\n● Equipped with safety mechanisms.\n\n● High-precision rotary table.","ja":"● 省スペース設計。\n\n● 安全機構を搭載しています。\n\n● 高精度回転テーブル。"},"p16":{"zh-CN":"● 通过上下表面连续测量功能，可以轻松测量上表面和下表面。","en":"● Continuous measurement of the upper and lower surfaces makes it easy to measure both surfaces.","ja":"● 上下面を連続して測定できる機能により、上面と下面を簡単に測定できます。"},"p17":{"zh-CN":"● 全新进化的小型表面粗糙度测定机。\n\n● 提供更丰富的选项、操作更简单、测量更精准。","en":"● A newly evolved compact surface roughness measuring machine.\n\n● More options, easier operation, and more precise measurement.","ja":"● さらに進化した小型表面粗さ測定機です。\n\n● 豊富なオプション、より簡単な操作、より高精度な測定を実現します。"},"p18":{"zh-CN":"● 提升使用便利性，功能更多！\n\n● 结合新的选配组合，可实现更高的处理能力。","en":"● Improved usability with more functions.\n\n● New optional combinations enable higher processing capability.","ja":"● 使いやすさを向上し、機能をさらに充実させています。\n\n● 新しいオプション構成との組み合わせにより、より高い処理能力を実現します。"},"p19":{"zh-CN":"● 1064nm波长高功率激光模块\n\n● 光罩线路及金属性污点修补","en":"● High-power laser module with a 1064nm wavelength.\n\n● Repair of mask circuits and metallic defects.","ja":"● 1064nm波長の高出力レーザーモジュール。\n\n● フォトマスクの回路および金属汚点の修復に対応します。"},"p20":{"zh-CN":"● 检测功能：利用特殊光学技术穿透硅晶圆并完整呈现，防止不良发生。\n\n● 适合半导体行业检测使用，如si interposer、TSV、Bumping、Flip chip、FC-CSP、FC-BGA、MEMS、WLC-SP及封装后成品等。","en":"● Inspection function: special optics penetrate silicon wafers and provide a complete view to help prevent defects.\n\n● Suitable for semiconductor inspection, including Si interposer, TSV, bumping, flip chip, FC-CSP, FC-BGA, MEMS, WLC-SP, and post-package products.","ja":"● 検査機能：特殊光学系によりシリコンウェーハを透過して内部を鮮明に観察し、不良の発生を防止します。\n\n● Siインターポーザ、TSV、バンピング、フリップチップ、FC-CSP、FC-BGA、MEMS、WLC-SP、パッケージ後製品など、半導体業界の検査に適しています。"},"p21":{"zh-CN":"● 采用FEM分析技术，具有高级感的全新设计，本体及外观尽可能采用一体成型方式制作，并提供丰富的测头系统供选择搭配。\n\n● 实现静音、高速驱动和高速加速性能。","en":"● Uses FEM analysis technology and a sophisticated new design. The body and exterior are manufactured as much as possible as an integrated structure, with a wide range of probe systems available.\n\n● Provides quiet operation, high-speed drive, and high acceleration.","ja":"● FEM解析技術を採用した洗練された新設計で、本体・外観には可能な限り一体成形構造を採用し、豊富なプローブシステムから選択できます。\n\n● 静音運転、高速駆動、高速加速を実現します。"},"p22":{"zh-CN":"● 为提高机身刚性而重新设计机身结构，以确保高速、高精度测量。\n\n● 通过新开发的高刚性结构设计结合补偿技术，实现高性能扫描测量。\n\n● 超高精度线性尺为各轴提供更高分辨率、精度及整体性能。","en":"● The machine structure has been redesigned for higher rigidity to ensure high-speed, high-precision measurement.\n\n● A newly developed high-rigidity structure combined with compensation technology enables high-performance scanning measurement.\n\n● Ultra-high-precision linear scales provide higher resolution, accuracy, and overall performance for each axis.","ja":"● 本体剛性を高めるために構造を再設計し、高速・高精度測定を実現します。\n\n● 新開発の高剛性構造と補正技術を組み合わせ、高性能なスキャン測定を実現します。\n\n● 超高精度リニアスケールにより、各軸の分解能・精度・総合性能を向上させます。"},"p23":{"zh-CN":"● 可搭载激光或接触式测头。\n\n● X轴最大行程可达2000mm。\n\n● 用于电子零件测量的影像测定机。","en":"● Can be equipped with laser or contact probes.\n\n● Maximum X-axis travel up to 2000mm.\n\n● A vision measuring machine for electronic component measurement.","ja":"● レーザーまたは接触式プローブを搭載できます。\n\n● X軸最大ストロークは2000mmです。\n\n● 電子部品の測定に適した画像測定機です。"},"p24":{"zh-CN":"● STREAM模式高速测量。\n\n● 新开发高亮度LED照明。","en":"● High-speed measurement in STREAM mode.\n\n● Newly developed high-brightness LED illumination.","ja":"● STREAMモードによる高速測定。\n\n● 新開発の高輝度LED照明を搭載しています。"},"p25":{"zh-CN":"● 测微器。\n\n● 由于产品种类众多，如需报价，敬请来电。","en":"● Micrometers.\n\n● As many product types are available, please contact us for a quotation.","ja":"● マイクロメータ。\n\n● 製品種類が多数あるため、お見積りをご希望の場合はお問い合わせください。"},"p26":{"zh-CN":"● 测微头。\n\n● 由于产品种类众多，如需报价，敬请来电。","en":"● Micrometer heads.\n\n● As many product types are available, please contact us for a quotation.","ja":"● マイクロメータヘッド。\n\n● 製品種類が多数あるため、お見積りをご希望の場合はお問い合わせください。"},"p27":{"zh-CN":"● 各式量表／数字量表。\n\n● 由于产品种类众多，如需报价，敬请来电。","en":"● Various dial gauges / digital indicators.\n\n● As many product types are available, please contact us for a quotation.","ja":"● 各種ダイヤルゲージ／デジタルゲージ。\n\n● 製品種類が多数あるため、お見積りをご希望の場合はお問い合わせください。"},"p28":{"zh-CN":"游标卡尺。","en":"Vernier caliper.","ja":"ノギス。"}};
+const PRODUCT_NAME_TRANSLATIONS={
+  "p01":{"zh-CN":"Mitutoyo-NIR物镜","en":"Mitutoyo-NIR Objective Lens","ja":"Mitutoyo-NIR対物レンズ"},
+  "p02":{"zh-CN":"Tube Lens","en":"Tube Lens","ja":"チューブレンズ"},
+  "p03":{"zh-CN":"Mitutoyo-UV物镜","en":"Mitutoyo-UV Objective Lens","ja":"Mitutoyo-UV対物レンズ"},
+  "p04":{"zh-CN":"Mitutoyo-BD物镜","en":"Mitutoyo-BD Objective Lens","ja":"Mitutoyo-BD対物レンズ"},
+  "p05":{"zh-CN":"Mitutoyo-Apo物镜","en":"Mitutoyo-Apo Objective Lens","ja":"Mitutoyo-Apo対物レンズ"},
+  "p06":{"zh-CN":"Mitutoyo-NUV物镜","en":"Mitutoyo-NUV Objective Lens","ja":"Mitutoyo-NUV対物レンズ"},
+  "p07":{"zh-CN":"电动影像测定机","en":"Motorized Vision Measuring Machine","ja":"電動画像測定機"},
+  "p08":{"zh-CN":"手动影像测定机","en":"Manual Vision Measuring Machine","ja":"手動画像測定機"},
+  "p09":{"zh-CN":"高倍率观察显微镜FS-70","en":"High-Magnification Observation Microscope FS-70","ja":"高倍率観察顕微鏡 FS-70"},
+  "p10":{"zh-CN":"二次元影像测定机","en":"2D Vision Measuring Machine","ja":"二次元画像測定機"},
+  "p11":{"zh-CN":"广视野显微镜装置WIDE VMU","en":"Wide-Field Microscope Unit WIDE VMU","ja":"広視野顕微鏡装置 WIDE VMU"},
+  "p12":{"zh-CN":"观察用显微镜VMU系列","en":"Observation Microscope VMU Series","ja":"観察用顕微鏡 VMUシリーズ"},
+  "p13":{"zh-CN":"小型高精度真圆度测定机","en":"Compact High-Precision Roundness Measuring Machine","ja":"小型高精度真円度測定機"},
+  "p14":{"zh-CN":"高精度真圆度圆筒形状测定机","en":"High-Precision Roundness & Cylindrical Form Measuring Machine","ja":"高精度真円度・円筒形状測定機"},
+  "p15":{"zh-CN":"中型真圆度圆筒形状测定机","en":"Medium-Size Roundness & Cylindrical Form Measuring Machine","ja":"中型真円度・円筒形状測定機"},
+  "p16":{"zh-CN":"高精度轮廓形状测定机","en":"High-Precision Contour Form Measuring Machine","ja":"高精度輪郭形状測定機"},
+  "p17":{"zh-CN":"小型表面粗糙度测定机","en":"Compact Surface Roughness Measuring Machine","ja":"小型表面粗さ測定機"},
+  "p18":{"zh-CN":"表面粗糙度测定机","en":"Surface Roughness Measuring Machine","ja":"表面粗さ測定機"},
+  "p19":{"zh-CN":"激光修补机","en":"Laser Repair Machine","ja":"レーザーリペア装置"},
+  "p20":{"zh-CN":"IR显微镜","en":"IR Microscope","ja":"IR顕微鏡"},
+  "p21":{"zh-CN":"CNC三坐标测量机","en":"CNC Coordinate Measuring Machine","ja":"CNC三次元測定機"},
+  "p22":{"zh-CN":"高精度CNC三坐标测量机","en":"High-Precision CNC Coordinate Measuring Machine","ja":"高精度CNC三次元測定機"},
+  "p23":{"zh-CN":"CNC影像测量机","en":"CNC Vision Measuring Machine","ja":"CNC画像測定機"},
+  "p24":{"zh-CN":"高速CNC影像测量机","en":"High-Speed CNC Vision Measuring Machine","ja":"高速CNC画像測定機"},
+  "p25":{"zh-CN":"千分尺","en":"Micrometer","ja":"マイクロメータ"},
+  "p26":{"zh-CN":"测微头","en":"Micrometer Head","ja":"マイクロメータヘッド"},
+  "p27":{"zh-CN":"量表","en":"Dial Gauge / Digital Indicator","ja":"ダイヤルゲージ／デジタルゲージ"},
+  "p28":{"zh-TW":"游標卡尺","zh-CN":"游标卡尺","en":"Vernier Caliper","ja":"ノギス"}
+};
+function productName(product){
+  const lang=localStorage.getItem('yofeng-lang')||'zh-TW';
+  return PRODUCT_NAME_TRANSLATIONS[product.id]?.[lang] ?? product.name;
+}
+function renderDescription(text, productId){const lang=localStorage.getItem('yofeng-lang')||'zh-TW';const translated=PRODUCT_DESCRIPTION_TRANSLATIONS[productId]?.[lang];const source=translated??text;return source.split(/\n\s*\n/).map(block=>{let t=block.trim();if(!t)return '';t=t.replace(/^●\s?/,'');const safe=esc(t);return `<span class="desc-line has-bullet">${safe}</span>`;}).filter(Boolean).join('')}
+function renderProducts(){const q=query.trim().toLowerCase();const list=PRODUCTS.filter(p=>(activeCat==='ALL'||p.cat===activeCat)&&(activeSub==='ALL'||p.sub===activeSub)&&(!q||(p.name+' '+p.cat+' '+p.sub+' '+p.desc).toLowerCase().includes(q)));const countTemplate=productT('productDirectory.count','目前顯示 {shown} / {total} 項產品');countNote.textContent=countTemplate.replace('{shown}',list.length).replace('{total}',PRODUCTS.length);grid.innerHTML=list.map(p=>`<article class="real-product-card"><div class="product-photo"><img src="assets/products/${p.img}" alt="${esc(productName(p))}" loading="lazy"></div><div class="real-product-body"><div class="product-meta"><span class="product-chip">${esc(productLabel('category',p.cat))}</span><span class="product-chip">${esc(productLabel('sub',p.sub))}</span></div><h3>${esc(productName(p))}</h3><p class="product-description">${renderDescription(p.desc||'請洽友豐貿易取得詳細產品資訊。', p.id)}</p><div class="product-actions">${p.pdf?`<a class="text-link" href="assets/products/${p.pdf}" target="_blank" rel="noopener">${esc(productT('productDirectory.catalog','查看型錄 →'))}</a>`:''}<a class="text-link" href="contact.html">${esc(productT('productDirectory.inquiry','詢問產品 →'))}</a></div></div></article>`).join('');empty.hidden=list.length>0;empty.textContent=productT('productDirectory.empty','找不到符合條件的產品。')}
+function renderAll(){renderCategoryTabs();renderSubTabs();renderProducts()}
+window.refreshProductDirectoryLanguage=function(){renderAll()}
+search.addEventListener('input',e=>{query=e.target.value;renderProducts()});renderAll();</script><script src="script.js"></script></body></html>
